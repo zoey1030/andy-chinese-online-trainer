@@ -59,7 +59,7 @@ function App() {
     <main className="app">
       <section className="home">
         <p className="eyebrow">中三华文 · 长期在线训练</p>
-        <h1>Andy 中文综合训练系统</h1>
+        <h1>中三华文综合训练系统</h1>
         <p className="intro">
           围绕生字手写、阅读理解、句子表达和作文练习，逐步把词语从“认得出”练到“写得准、用得自然”。
         </p>
