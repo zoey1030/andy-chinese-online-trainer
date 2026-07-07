@@ -466,6 +466,64 @@ h2 {
   padding-top: 14px;
 }
 
+.daily-task-list {
+  display: grid;
+  gap: 14px;
+}
+
+.daily-task-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid #dce5df;
+  border-radius: 12px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(35, 55, 55, 0.06);
+}
+
+.daily-task-main {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.daily-task-main p {
+  margin: 6px 0 0;
+  color: #405453;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.daily-task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.task-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #a05b22;
+  background: #fff2e4;
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.task-status.done {
+  color: #ffffff;
+  background: #2f6f73;
+}
+
 @media (max-width: 760px) {
   .home {
     padding: 24px;
@@ -501,6 +559,14 @@ h2 {
   .record-meta {
     grid-template-columns: 1fr;
   }
+
+  .daily-task-card {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-task-actions {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 460px) {
@@ -522,6 +588,14 @@ h2 {
   }
 
   .action-row button {
+    flex: 1 1 150px;
+  }
+
+  .daily-task-main {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-task-actions button {
     flex: 1 1 150px;
   }
 }

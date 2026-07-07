@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import DailyTaskMode from './components/DailyTaskMode'
 import HandwritingMode from './components/HandwritingMode'
 import MistakeBook from './components/MistakeBook'
 import MistakeReviewMode from './components/MistakeReviewMode'
@@ -22,6 +23,10 @@ const menuItems = [
 
 function App() {
   const [screen, setScreen] = useState('home')
+
+  if (screen === 'daily') {
+    return <DailyTaskMode onBack={() => setScreen('home')} onNavigate={setScreen} />
+  }
 
   if (screen === 'handwriting') {
     return <HandwritingMode onBack={() => setScreen('home')} />
@@ -71,6 +76,7 @@ function App() {
               type="button"
               className="menu-button"
               onClick={() => {
+                if (item === '今日任务') setScreen('daily')
                 if (item === '生字手写') setScreen('handwriting')
                 if (item === '故事闯关') setScreen('story')
                 if (item === '阅读理解') setScreen('reading')
